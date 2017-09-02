@@ -6,10 +6,10 @@ clients=[];
 
 var friend=require(("chatfriend"));
 
-var port=3000,url="mongodb://jlbaker361:Password1@ds161483.mlab.com:61483/chat";
+var port=8080,url="mongodb://jlbaker361:Password1@ds161483.mlab.com:61483/chat";
 
 mongo.connect(url,function(err,db){
-	friend.generateKeys(db,1000);
+	//friend.generateKeys(db,1000);
 	/*var oli=friend.newUser(db,"oliver","hurdle","Password1",function(u){
 		console.log(u);
 		oli=u;
