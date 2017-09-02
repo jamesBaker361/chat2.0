@@ -10,6 +10,7 @@ socket.on("hello",function(data){
 });
 
 socket.on("user",function(data){
+	console.log(data);
 	if(typeof(data.convos)=="undefined"){
 		$("#tryAgain").html("Try Again!");
 	}
