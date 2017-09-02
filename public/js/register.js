@@ -1,5 +1,5 @@
 $("#registerForm").submit(function(e){
-	e.preventDefault();
+	//e.preventDefault();
 	socket.emit("registerReq",{name:$("#name").val(),password:$("#password").val()});
 })
 
