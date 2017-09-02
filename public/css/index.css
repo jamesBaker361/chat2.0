@@ -122,3 +122,7 @@
 	align-content: center;
 	text-align: center;
 }
+
+#registerButton{
+	cursor: pointer;
+}
