@@ -11,7 +11,7 @@ socket.on("hello",function(data){
 
 socket.on("user",function(data){
 	console.log(data);
-	if(typeof(data.convos)=="undefined"){
+	if(data==null){
 		$("#tryAgain").html("Try Again!");
 	}
 	newPage(new EJS({url:"/ejs/usermain.ejs"}).render(data));
