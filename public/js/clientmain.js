@@ -21,6 +21,7 @@ socket.on("user",function(data){
 });
 
 socket.on("tryAgain",function(){
+	console.log("lets try a gain!!");
 	$("#tryAgain").html("Try Again!")
 });
 
