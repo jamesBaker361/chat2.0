@@ -1,6 +1,7 @@
 $("#registerForm").submit(function(e){
 	e.preventDefault();
 	socket.emit("registerReq",{name:$("#name").val(),password:$("#password").val()});
+	$("#result").html(" ");
 })
 
 socket.on("registerRes",function(data){
