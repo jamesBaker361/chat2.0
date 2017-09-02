@@ -4,9 +4,11 @@ $("#registerForm").submit(function(e){
 })
 
 socket.on("registerRes",function(data){
+	console.log("nnnnuuuttt");
 	if(data==true){
 		$("#result").html("Succes. You will be redirected to Login").css("color","green");
 		window.setTimeout(function(){
+			$.get("http://chat-asschat.193b.starter-ca-central-1.openshiftapps.com/");
 			window.location.replace("http://chat-asschat.193b.starter-ca-central-1.openshiftapps.com/");
 		},800);
 	}else{

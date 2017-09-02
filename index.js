@@ -149,7 +149,7 @@ app.use(parser.urlencoded({     // to support URL-encoded bodies
 				//console.log(out);
 				if(out.length>0){
 					friend.targetClient(socket,clients,function(boi){
-						boi.emit("registerRes")
+						boi.emit("registerRes");
 					});
 				}else{
 					friend.newUser(db,data.name,data.password,function(u){
