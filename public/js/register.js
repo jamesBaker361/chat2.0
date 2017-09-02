@@ -7,8 +7,7 @@ socket.on("registerRes",function(data){
 	if(data==true){
 		$("#result").html("Succes. You will be redirected to Login").css("color","green");
 		window.setTimeout(function(){
-			//window.location.reload(true);
-			window.location.href="http://chat-asschat.193b.starter-ca-central-1.openshiftapps.com/";
+			window.location.replace("http://chat-asschat.193b.starter-ca-central-1.openshiftapps.com/");
 		},800);
 	}else{
 		$("#result").html("Username taken! Try Again!").css("color","red")
