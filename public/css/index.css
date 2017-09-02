@@ -116,3 +116,9 @@
 .clicked{
 	background-color: #50e074;
 }
+
+#tryAgain{
+	font-color: green;
+	align-content: center;
+	text-align: center;
+}

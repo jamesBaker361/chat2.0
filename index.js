@@ -55,9 +55,11 @@ app.use(parser.urlencoded({     // to support URL-encoded bodies
 
 		socket.on("login",function(data){
 			//console.log(data);
+			var success=false;
 			for(var t=0;t<clients.length;t++){
 				console.log("index of "+clients[t].id.toString()+" is "+t.toString())
   				if(socket.id==clients[t].id){
+  					success=true;
   					db.collection("users").findOne({name:data.username,password:data.password},{},function(err,out){
   						friend.targetClient(socket,clients,function(boi){
   							boi.emit("user",out);
@@ -65,6 +67,11 @@ app.use(parser.urlencoded({     // to support URL-encoded bodies
 
   					});
   				}
+  			}
+  			if(!success){
+  				friend.targetClient(socket,clients,function(boi){
+  					boi.emit("tryAgain");
+  				});
   			}
 		});
 

@@ -20,6 +20,10 @@ socket.on("user",function(data){
 	}
 });
 
+socket.on("tryAgain",function(){
+	$("#tryAgain").html("Try Again!")
+});
+
 socket.on("joinButtonRes",function(data){
 	console.log(data);
 	$("#"+data.id).html("Join "+data.name);
