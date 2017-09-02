@@ -10,6 +10,9 @@ socket.on("hello",function(data){
 });
 
 socket.on("user",function(data){
+	if(typeof(data.convos)=="undefined"){
+		$("#tryAgain").html("Try Again!");
+	}
 	newPage(new EJS({url:"/ejs/usermain.ejs"}).render(data));
 	user=data;
 	for(var h=0;h<$(".joinButton").length;h++){
@@ -20,10 +23,10 @@ socket.on("user",function(data){
 	}
 });
 
-socket.on("tryAgain",function(){
+/*socket.on("tryAgain",function(){
 	console.log("lets try a gain!!");
 	$("#tryAgain").html("Try Again!")
-});
+});*/
 
 socket.on("joinButtonRes",function(data){
 	console.log(data);
