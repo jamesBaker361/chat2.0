@@ -68,7 +68,7 @@ app.use(parser.urlencoded({     // to support URL-encoded bodies
   					});
   				}
   			}
-  			if(!success){
+  			if(success==false){
   				friend.targetClient(socket,clients,function(boi){
   					boi.emit("tryAgain");
   				});
