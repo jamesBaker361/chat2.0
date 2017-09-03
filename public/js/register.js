@@ -13,7 +13,8 @@ socket.on("registerRes",function(data){
 	console.log(data);
 	if(data){
 		$("#result").html("Success. You will be redirected to Login").css("color","green");
-		$.get("/");
+		//$.get("/");
+		window.location.replace("http://chat-asschat.193b.starter-ca-central-1.openshiftapps.com/");
 		/*window.setTimeout(function(){
 			$.get("http://chat-asschat.193b.starter-ca-central-1.openshiftapps.com/");
 			window.location.replace("http://chat-asschat.193b.starter-ca-central-1.openshiftapps.com/");
