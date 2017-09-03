@@ -121,7 +121,7 @@ app.use(parser.urlencoded({     // to support URL-encoded bodies
 		socket.on("registerReq",function(data){
 
 			db.collection("users").find({name:data.name},{}).toArray(function(err,out){
-				//console.log(out);
+				console.log(out);
 				if(out.length>0){
 					friend.targetClient(socket,clients,function(boi){
 						boi.emit("registerRes");
