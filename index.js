@@ -20,6 +20,14 @@ app.use(parser.urlencoded({     // to support URL-encoded bodies
 		res.render('index');
 	});
 
+	app.get('/register',function(req,res){
+		res.render("register");
+	});
+
+	app.post("/register",function(){
+
+	});
+
 	http.listen(port, function(){
 		console.log('listening on *:'+port.toString());
     });
