@@ -7,7 +7,7 @@ $("#registerForm").submit(function(e){
 socket.on("registerRes",function(data){
 	console.log("nnnnuuuttt");
 	console.log(data);
-	if(data.okay==true){
+	if(data){
 		$("#result").html("Success. You will be redirected to Login").css("color","green");
 		window.location.reload();
 		/*window.setTimeout(function(){
