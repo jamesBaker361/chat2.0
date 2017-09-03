@@ -120,7 +120,7 @@ app.use(parser.urlencoded({     // to support URL-encoded bodies
 				}else{
 					friend.newUser(db,data.name,data.password,function(u){
 						friend.targetClient(socket,clients,function(boi){
-							var y=true;
+							var y={okay:true};
 							boi.emit("registerRes",y);
 						})
 					})
