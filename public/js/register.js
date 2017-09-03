@@ -1,8 +1,12 @@
+console.log(">:)");
+
+$(document).ready(function(){
+	socket=io();
 $("#registerForm").submit(function(e){
 	e.preventDefault();
 	socket.emit("registerReq",{name:$("#name").val(),password:$("#password").val()});
 	$("#result").html(" ");
-})
+});
 
 socket.on("registerRes",function(data){
 	console.log("nnnnuuuttt");
@@ -17,4 +21,5 @@ socket.on("registerRes",function(data){
 	}else{
 		$("#result").html("Username taken! Try Again!").css("color","red")
 	}
-})
+});
+});
