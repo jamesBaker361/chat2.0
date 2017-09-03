@@ -111,6 +111,7 @@ app.use(parser.urlencoded({     // to support URL-encoded bodies
 		});
 
 		socket.on("registerReq",function(data){
+			var y={okay:true};
 			db.collection("users").find({name:data.name},{}).toArray(function(err,out){
 				//console.log(out);
 				if(out.length>0){
@@ -120,7 +121,6 @@ app.use(parser.urlencoded({     // to support URL-encoded bodies
 				}else{
 					friend.newUser(db,data.name,data.password,function(u){
 						friend.targetClient(socket,clients,function(boi){
-							var y={okay:true};
 							boi.emit("registerRes",y);
 						})
 					})
