@@ -20,5 +20,4 @@ socket.on("registerRes",function(data){
 		$("#result").html("Username taken! Try Again!").css("color","red")
 	}
 });
-$("#"+user.key).remove();
 });
