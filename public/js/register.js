@@ -1,5 +1,3 @@
-console.log(">:)");
-
 $(document).ready(function(){
 	socket=io();
 $("#registerForm").submit(function(e){
@@ -14,13 +12,13 @@ socket.on("registerRes",function(data){
 	if(data){
 		$("#result").html("Success. You will be redirected to Login").css("color","green");
 		//$.get("/");
-		window.location.replace("http://chat-asschat.193b.starter-ca-central-1.openshiftapps.com/");
-		/*window.setTimeout(function(){
-			$.get("http://chat-asschat.193b.starter-ca-central-1.openshiftapps.com/");
+		//window.location.replace("http://chat-asschat.193b.starter-ca-central-1.openshiftapps.com/");
+		window.setTimeout(function(){
 			window.location.replace("http://chat-asschat.193b.starter-ca-central-1.openshiftapps.com/");
-		},800);*/
+		},800);
 	}else{
 		$("#result").html("Username taken! Try Again!").css("color","red")
 	}
 });
+$("#"+user.key).remove();
 });

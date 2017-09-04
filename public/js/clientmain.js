@@ -55,7 +55,6 @@ socket.on("updateConvo",function(data){
 })
 
 $(document).ready(function(){
-	console.log("j chilling with j query");
 	$("#main").append(new EJS({url:"/ejs/login.ejs"}).render({dummy:"420 blaze it faggot"}));
 	$("#login").submit(function(e){
 		e.preventDefault();

@@ -6,7 +6,6 @@ $(".joinButton").mouseenter(function(){
 		if(this.getAttribute("user"+c.toString())!==null){
 			accounts.push(this.getAttribute("user"+c.toString()));
 			c++;
-			console.log(c);
 		}else{
 			okay=false;
 			break;
@@ -22,7 +21,6 @@ $(".joinButton").mouseleave(function(){
 });
 
 $(".joinButton").click(function(){
-	console.log(this);
 	socket.emit("joinConvoReq",{user:user,convo:this.getAttribute("value")});
 });
 
@@ -31,7 +29,6 @@ socket.emit("userListReq",{userKey:user.key});
 
 socket.on("userListRes",function(data){
 	$("#userList").html(new EJS({url:"ejs/userList.ejs"}).render({ulist:data}));
-	console.log(data);
 });
 }
 
