@@ -67,16 +67,18 @@ app.use(parser.urlencoded({     // to support URL-encoded bodies
 
 		socket.on("joinButtonReq",function(data){
 			//console.log(data);
-			db.collection("convo").findOne({key:data.convoKey},{},function(err,out){
+			db.collection("convo").findOne({key:data.convo},{},function(err,out){
 				console.log("errr is");
 				console.log(err);
 				console.log("out is ");
 				console.log(out);
+				if(out!==null){
   					friend.targetClient(socket,clients,function(boi){
 						var y=out;
   						y.id=data.id;
   						boi.emit("joinButtonRes",out);
   					});
+  			}
 			});
 		});
 

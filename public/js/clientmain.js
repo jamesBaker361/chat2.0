@@ -17,6 +17,10 @@ socket.on("user",function(data){
 	newPage(new EJS({url:"/ejs/usermain.ejs"}).render(data));
 	user=data;
 	for(var h=0;h<$(".joinButton").length;h++){
+		console.log({
+			id:$(".joinButton")[h].getAttribute("id"),
+			convoKey:$(".joinButton")[h].getAttribute("value")
+		});
 		socket.emit("joinButtonReq",{
 			id:$(".joinButton")[h].getAttribute("id"),
 			convoKey:$(".joinButton")[h].getAttribute("value")
@@ -30,7 +34,7 @@ socket.on("user",function(data){
 });*/
 
 socket.on("joinButtonRes",function(data){
-	console.log(data);
+	//console.log(data);
 	$("#"+data.id).html("Join "+data.name);
 	for(var f=0;f<data.accounts.length;f++){
 		$("#"+data.id).attr("user"+f.toString(),data.accounts[f].nickname);
