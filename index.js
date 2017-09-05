@@ -66,8 +66,9 @@ app.use(parser.urlencoded({     // to support URL-encoded bodies
 		});
 
 		socket.on("joinButtonReq",function(data){
-			//console.log(data);
-			db.collection("convo").findOne({key:data.convo},{},function(err,out){
+			console.log("joinButtonReq");
+			console.log(data);
+			db.collection("convo").findOne({key:data.convoKey},{},function(err,out){
 				console.log("errr is");
 				console.log(err);
 				console.log("out is ");
