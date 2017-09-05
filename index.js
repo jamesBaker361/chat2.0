@@ -68,7 +68,10 @@ app.use(parser.urlencoded({     // to support URL-encoded bodies
 		socket.on("joinButtonReq",function(data){
 			//console.log(data);
 			db.collection("convo").findOne({key:data.convoKey},{},function(err,out){
-				console.log("out.name is "+out.name);
+				console.log("errr is");
+				console.log(err);
+				console.log("out is ");
+				console.log(out);
   					friend.targetClient(socket,clients,function(boi){
 						var y=out;
   						y.id=data.id;
