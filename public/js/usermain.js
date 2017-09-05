@@ -30,9 +30,8 @@ socket.emit("userListReq",{userKey:user.key});
 socket.on("userListRes",function(data){
 	console.log(data);
 	$("#userList").html(new EJS({url:"ejs/userList.ejs"}).render({ulist:data}));
+	$("#"+user.key).remove();
 });
-
-$("#"+user.key).remove();
 }
 
 refreshUsers();
